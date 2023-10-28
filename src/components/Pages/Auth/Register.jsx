@@ -57,7 +57,7 @@ const Register = () => {
     <>
       <div className="container">
         <div className="row justify-content-center mt-5">
-          <div className="col-lg-5 col-md-6 col-12 shadow-lg rounded py-3 form-bg">
+          <div className="col-lg-5 col-md-6 col-11 shadow-lg rounded py-3 form-bg">
             <form onSubmit={handleSubmit} className="pb-3">
               <p className="fw-semibold fs-4 mb-4">Sign Up</p>
 
