@@ -1,0 +1,113 @@
+.bg {
+  background-color: #353535;
+}
+
+.sidebar {
+  color: #000;
+  background-color: #353535;
+  height: 100vh;
+  position: fixed;
+  width: 315px;
+}
+
+.sm-sidebar {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+  color: #fff;
+  z-index: 10;
+  background-color: #353535;
+}
+
+@media (min-width: 576px) {
+  .main-contents {
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-contents {
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-contents {
+    margin-left: 325px;
+  }
+}
+
+/* Search bar */
+.input-group {
+  border: 1px solid #000;
+}
+
+.form-control {
+  background-color: transparent;
+  border: none;
+  padding: 0 30px;
+  color: #fff;
+}
+
+.input-group input:focus {
+  box-shadow: none;
+  border: 1px solid #000;
+  transition: 1s;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+}
+
+.input-group input::placeholder {
+  color: #fff;
+  font-size: small;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.input-group-text {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+}
+.input-group-text:hover {
+  background-color: #00595c;
+}
+
+.badge {
+  font-size: 12px;
+}
+
+.lo {
+  width: 40px;
+  height: 40px;
+}
+
+.name-badge {
+  background-color: #222;
+  border-radius: 50%;
+}
+
+/*  Welcome */
+.welcome-wrapper {
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.transfer-wrapper {
+  height: 200px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Transfer */
+.contact-badge {
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
