@@ -2,24 +2,16 @@
   background-color: #353535;
 }
 
+.bg2 {
+  background-color: #212121;
+}
+
 .sidebar {
   color: #000;
   background-color: #353535;
   height: 100vh;
   position: fixed;
-  width: 315px;
-}
-
-.sm-sidebar {
-  overflow: hidden;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 250px;
-  color: #fff;
-  z-index: 10;
-  background-color: #353535;
+  width: 310px;
 }
 
 @media (min-width: 576px) {
@@ -36,7 +28,7 @@
 
 @media (min-width: 992px) {
   .main-contents {
-    margin-left: 325px;
+    margin-left: 315px;
   }
 }
 
@@ -50,6 +42,11 @@
   border: none;
   padding: 0 30px;
   color: #fff;
+}
+
+.form-control::placeholder {
+  color: #fff;
+  font-size: small;
 }
 
 .input-group input:focus {
@@ -93,15 +90,25 @@
   border-radius: 50%;
 }
 
+.dash-contents {
+  height: 500px;
+}
+
 /*  Welcome */
 .welcome-wrapper {
-  height: 200px;
+  height: 220px;
+}
+
+.transfer-wrapper {
+  height: 220px;
+}
+
+.left-border-radius {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-.transfer-wrapper {
-  height: 200px;
+.right-border-radius {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -110,4 +117,124 @@
 .contact-badge {
   border: 3px solid #fff;
   border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+.plus-badge {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.transfer-btn {
+  width: 110px;
+  height: 35px;
+  border: none;
+  box-shadow: 1px 2px #000;
+}
+
+.bg-purple {
+  background-color: #493657;
+}
+
+.bg-blue {
+  background-color: #0e6ba8;
+}
+
+/* Top  */
+.line-height-low {
+  line-height: 1px;
+}
+
+/* Subscription */
+.d-flex {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  /* padding: 20px 0px; */
+}
+
+.d-flex::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sidebar */
+.logo {
+  width: 170px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.316);
+}
+
+.sm-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 350px;
+  color: #fff;
+  z-index: 10;
+  background-color: #222424;
+}
+
+/* Transaction */
+/* .table-responsive {
+  box-shadow: inset 4px 40px 49px #923f3f;
+} */
+
+.table thead th {
+  padding: 30px;
+  border-bottom: none !important;
+  color: #7bc5f6;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.table tbody tr td {
+  padding: 0px 30px;
+  padding-top: 20px;
+  color: #cfc7c7;
+  font-size: 13px;
+  letter-spacing: 0.1rem;
+  font-family: "Raleway", sans-serif;
+  border-top: 5px solid #212121;
+  border-right: 5px solid #212121;
+  border-radius: 10px;
+  background: #353535;
+}
+
+.marginRow {
+  margin: 0 !important;
+}
+
+/* Group */
+.group {
+  height: 31vh;
+  overflow: scroll;
+}
+
+.group::-webkit-scrollbar {
+  display: none;
+}
+
+/* Subscription */
+.subscription {
+  height: 31vh;
+  overflow: scroll;
+}
+
+.subscription::-webkit-scrollbar {
+  display: none;
 }
