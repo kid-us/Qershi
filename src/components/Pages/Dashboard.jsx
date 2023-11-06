@@ -1,17 +1,16 @@
 import React from "react";
-import Sidebar from "../Dashboard/Sidebar";
-import Contents from "../Dashboard/Contents";
+import Sidebar from "../Sidebar";
+import Contents from "../Contents";
+import Searchbar from "../Contents/Searchbar";
 import "./dashboard.css";
 const Dashboard = () => {
   return (
     <>
-      <div className="row container-fluid">
-        <div className="sidebar shadow-lg p-4">
-          <Sidebar></Sidebar>
-        </div>
-
-        <div className="col-12">
-          <div className="main-contents">
+      <Sidebar></Sidebar>
+      <div className="main-contents">
+        <div className="row">
+          <div className="col-12">
+            <Searchbar></Searchbar>
             <Contents></Contents>
           </div>
         </div>
