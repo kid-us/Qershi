@@ -7,6 +7,11 @@
   margin-top: 140px;
   padding: 0px 60px;
 }
+.input-group {
+  border: none !important;
+  background-color: #fff;
+  border-radius: 5px;
+}
 
 .form-btn {
   border: none;
@@ -23,20 +28,21 @@
   box-shadow: none;
 }
 
-/* .input-group-text {
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid #111;
-  border-radius: unset;
-} */
+.input-group-text {
+  background-color: #119da4 !important;
+  border-radius: 5px;
+}
 
 .form-control {
   box-shadow: none;
   height: 45px;
+  color: #000 !important;
+  padding: 10px !important;
   border-radius: 5px;
 }
 .form-control:focus {
   box-shadow: 1px 2px #000;
+  color: #000 !important;
 }
 
 .input-group input:focus {
