@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Joi from "joi-browser";
-import VerifyInputs from "../Form/VerifyInputs";
-import Button from "../Form/Button";
+import { useForm } from "react-hook-form";
+import Button from "./Button";
 import "../../app.css";
 
 const Verify = () => {
-  const [errors, setErrors] = useState({});
-  const [verify, setVerify] = useState({
-    otp1: "",
-    otp2: "",
-    otp3: "",
-    otp4: "",
-  });
   const [counter, setCounter] = useState(30);
-
   //   Counter
   useEffect(() => {
     const timer =
@@ -23,48 +14,21 @@ const Verify = () => {
     return () => clearInterval(timer);
   }, [counter]);
 
-  //   VAlidation Schema
-  const schema = {
-    otp1: Joi.number().required(),
-    otp2: Joi.number().required(),
-    otp3: Joi.number().required(),
-    otp4: Joi.number().required(),
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      otp1: "",
+      otp2: "",
+      otp3: "",
+      otp4: "",
+    },
+  });
 
-  // Form Validation
-  const validate = () => {
-    const { error } = Joi.validate(verify, schema, { abortEarly: false });
-
-    if (!error) return null;
-
-    const errors = {};
-    for (let item of error.details) errors[item.path[0]] = item.message;
-    return errors;
-  };
-
-  // Form Submit
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const errors = validate();
-    setErrors(errors || {});
-    if (errors) return;
-
-    doSubmit();
-  };
-
-  // All good to go
-  const doSubmit = () => {
-    console.log("Submit");
-  };
-
-  // On Input change
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    let userData = { ...verify };
-    userData[name] = value;
-    setVerify(userData);
-    setErrors(errors);
+  const onSubmit = (data) => {
+    console.log(data);
   };
 
   // Resend Code
@@ -80,45 +44,60 @@ const Verify = () => {
           <div className="col-lg-5  col-md-6 col-11 shadow-lg rounded py-3 form-bg">
             <p className="fw-semibold fs-4 mb-5">Verify Phone Number</p>
 
-            <form onSubmit={handleSubmit} className="pb-3">
+            <form onSubmit={handleSubmit(onSubmit)} className="pb-3">
               <p className="small mb-4 label">
                 Enter the 4 digit we send on mobile number :{" "}
                 <span className="text-info fw-semibold"> +251990000000</span>
               </p>
 
               {/* Input Group */}
-              <div className="input-group">
-                <VerifyInputs
-                  name="otp1"
-                  value={verify.otp1}
-                  onChange={handleChange}
-                  error={errors.otp1}
-                ></VerifyInputs>
+              <div className="input-group bg-dark">
+                <input
+                  type="tel"
+                  maxLength={1}
+                  className={`form-control fw-semibold me-1 bg-white text-center fs-4 ${
+                    errors.otp1 && "border border-danger border-2"
+                  }`}
+                  {...register("otp1", {
+                    required: true,
+                  })}
+                />
 
-                <VerifyInputs
-                  name="otp2"
-                  value={verify.otp2}
-                  onChange={handleChange}
-                  error={errors.otp2}
-                ></VerifyInputs>
+                <input
+                  type="tel"
+                  maxLength={1}
+                  className={`form-control fw-semibold me-1 bg-white text-center fs-4 ${
+                    errors.otp2 && "border border-danger border-2"
+                  }`}
+                  {...register("otp2", {
+                    required: true,
+                  })}
+                />
 
-                <VerifyInputs
-                  name="otp3"
-                  value={verify.otp3}
-                  onChange={handleChange}
-                  error={errors.otp3}
-                ></VerifyInputs>
+                <input
+                  type="tel"
+                  maxLength={1}
+                  className={`form-control fw-semibold me-1 bg-white text-center fs-4 ${
+                    errors.otp3 && "border border-danger border-2"
+                  }`}
+                  {...register("otp3", {
+                    required: true,
+                  })}
+                />
 
-                <VerifyInputs
-                  name="otp4"
-                  value={verify.otp4}
-                  onChange={handleChange}
-                  error={errors.otp4}
-                ></VerifyInputs>
+                <input
+                  type="tel"
+                  maxLength={1}
+                  className={`form-control fw-semibold me-1 bg-white fs-5 text-center fs-4 ${
+                    errors.otp4 && "border border-danger border-2"
+                  }`}
+                  {...register("otp4", {
+                    required: true,
+                  })}
+                />
               </div>
 
-              {/* REsend Counter */}
-
+              {/* Resend Counter */}
               {typeof counter === "number" ? (
                 <p className="mt-4 small fw-semibold">
                   Resend code in : <span className="text-info">{counter}</span>
