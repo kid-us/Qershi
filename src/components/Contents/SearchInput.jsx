@@ -7,7 +7,7 @@ const SearchInput = () => {
         <input
           className="form-control text-white"
           name="search"
-          placeholder="Search for Users, Groups..."
+          placeholder="Search for Users, Groups.."
         />
         <button className="input-group-text px-5 bi-search"></button>
       </div>
