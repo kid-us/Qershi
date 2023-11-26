@@ -38,7 +38,7 @@ const Searchbar = () => {
         <div className="col-lg-1 col-md-1 col-2 offset-lg-2 offset-md-2 offset-2">
           <p className="btn bi-bell-fill text-white position-relative mt-2 fs-5">
             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger mt-1">
-              9
+              0
             </span>
           </p>
         </div>
